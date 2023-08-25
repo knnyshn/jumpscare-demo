@@ -1,41 +1,10 @@
-// import React from "react";
-// import Welcome from "./components/Welcome/Welcome";
-// import Instructions from "./components/Instructions/Instructions";
-// import Game from "./components/Game/Game";
-// import Timer from "./components/Timer/Timer";
-
-// function App() {
-//   return (
-//     <>
-//       <Welcome />
-//       <Instructions />
-//       <Game />
-//       <Timer />
-//     </>
-//   );
-// }
-
-// export default App;
-
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import exercise1Image from "./assets/1.jpeg";
-import exercise2Image from "./assets/2.jpeg";
-import exercise3Image from "./assets/3.jpeg";
-import exercise4Image from "./assets/4.jpeg";
-import exercise5Image from "./assets/5.jpeg";
-import exercise6Image from "./assets/6.jpeg";
-import exercise7Image from "./assets/7.jpeg";
-import exercise8Image from "./assets/8.jpeg";
-import exercise9Image from "./assets/9.jpeg";
-import exercise10Image from "./assets/10.jpeg";
-import scaryImage from "./assets/lose.jpeg";
 
 const NUM_EXERCISES = 10; // Number of exercises
 const EXERCISE_TIME_LIMIT = 30.0; // Time limit for each exercise in seconds
 
 function shuffleArray(array) {
-  // Function to shuffle an array using Fisher-Yates algorithm
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
@@ -43,34 +12,8 @@ function shuffleArray(array) {
   return array;
 }
 
-function getExerciseImage(exerciseNumber) {
-  switch (exerciseNumber) {
-    case 1:
-      return exercise1Image;
-    case 2:
-      return exercise2Image;
-    case 3:
-      return exercise3Image;
-    case 4:
-      return exercise4Image;
-    case 5:
-      return exercise5Image;
-    case 6:
-      return exercise6Image;
-    case 7:
-      return exercise7Image;
-    case 8:
-      return exercise8Image;
-    case 9:
-      return exercise9Image;
-    case 10:
-      return exercise10Image;
-
-    // ... handle other exercise numbers
-    default:
-      return ""; // Return an empty string or a default image path
-  }
-}
+const getImage = (id) => `/assets/${id}.jpeg`;
+const getScaryImage = (id) => `/assets/lose.jpeg`;
 
 function App() {
   const [screen, setScreen] = useState("welcome");
@@ -204,13 +147,13 @@ function App() {
             <div id="exercise-container">
               {scaryImagesShown[currentExerciseIndex] ? (
                 <img
-                  src={scaryImage} // Display the scary image
+                  src={getScaryImage} // Display the scary image
                   alt={`Scary Image`}
                 />
               ) : (
                 <img
                   id="exercise-image"
-                  src={getExerciseImage(currentExerciseNumber)} // Use the imported exercise image
+                  src={getImage(currentExerciseNumber)} // Use the imported exercise image
                   alt={`Exercise ${currentExerciseNumber} Image`}
                   onClick={handleClick}
                 />
