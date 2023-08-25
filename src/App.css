@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+#exercise-image {
+  width: 100%;
+  /* Ensure the image takes up the entire screen */
+  height: 100%;
+  object-fit: cover;
+  /* Maintain aspect ratio and cover the entire container */
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
