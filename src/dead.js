@@ -1,22 +1,3 @@
-// import React from "react";
-// import Welcome from "./components/Welcome/Welcome";
-// import Instructions from "./components/Instructions/Instructions";
-// import Game from "./components/Game/Game";
-// import Timer from "./components/Timer/Timer";
-
-// function App() {
-//   return (
-//     <>
-//       <Welcome />
-//       <Instructions />
-//       <Game />
-//       <Timer />
-//     </>
-//   );
-// }
-
-// export default App;
-
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import exercise1Image from "./assets/1.jpeg";
