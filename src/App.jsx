@@ -1,27 +1,6 @@
 import React, { useState, useEffect } from "react";
-
-const useTime = () => {
-  const [time, setTime] = useState(30)
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (time > 0) {
-        setTime(time - 1);
-      }
-    }, 1000)
-    return () => clearInterval(interval)
-  }, [time])
-
-  return time
-}
-
-const Image = ({ id }) => {
-  return (
-    <>
-    <img src={`./assets/${id}.jpeg`} alt="" />
-    </>
-  )
-}
+import Image from "./components/Image";
+import useTime from "./components/useTime";
 
 const App = () => {
   const time = useTime();
