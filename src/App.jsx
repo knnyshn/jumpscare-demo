@@ -1,23 +1,27 @@
-import React, { useState } from "react";
-import Welcome from "./components/Welcome";
+import React, { useState, useEffect } from "react";
 
-function App() {
-  const [modalOpen, setModalOpen] = useState(false);
+const useTime = () => {
+  const [time, setTime] = useState(30)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (time > 0) {
+        setTime(time - 1);
+      }
+    }, 1000)
+    return () => clearInterval(interval)
+  }, [time])
+
+  return time
+}
+
+const App = () => {
+  const time = useTime();
 
   return (
-    <div className="App">
-      <h1>Welcome to the game!</h1>
-      <button
-        className="openModalBtn"
-        onClick={() => {
-          setModalOpen(true);
-        }}
-      >
-        Instructions
-      </button>
-
-      {modalOpen && <Welcome setOpenModal={setModalOpen} />}
-    </div>
+    <>
+      {time}
+    </>
   );
 }
 
