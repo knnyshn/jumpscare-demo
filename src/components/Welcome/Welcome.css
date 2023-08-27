@@ -1,0 +1,37 @@
+h1 {
+  text-align: center;
+}
+
+p {
+  max-width: 600px;
+}
+
+div.buttons {
+  text-align: center;
+}
+
+.cancel-button {
+  width: 200px;
+  height: 40px;
+  border: none;
+  border-radius: 6px;
+  background-color: rgb(255, 54, 54);
+  color: white;
+  cursor: pointer;
+}
+
+.divider {
+  width: 5px;
+  height: auto;
+  display: inline-block;
+}
+
+.start-button {
+  width: 200px;
+  height: 40px;
+  border: none;
+  border-radius: 6px;
+  background-color: cornflowerblue;
+  color: white;
+  cursor: pointer;
+}
