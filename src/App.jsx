@@ -15,12 +15,21 @@ const useTime = () => {
   return time
 }
 
+const Image = ({ id }) => {
+  return (
+    <>
+    <img src={`./assets/${id}.jpeg`} alt="" />
+    </>
+  )
+}
+
 const App = () => {
   const time = useTime();
 
   return (
     <>
       {time}
+      <Image id={1}/>
     </>
   );
 }
