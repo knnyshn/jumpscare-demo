@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import "./App.css";
-import Welcome from "./components/Welcome/Welcome";
+import Welcome from "./components/Welcome";
 
 function App() {
   const [modalOpen, setModalOpen] = useState(false);

@@ -1,6 +1,5 @@
 import React from "react";
-import "./Welcome.css";
-import Game from "../Game/Game"
+import Game from "./Game"
 import { useState } from "react";
 
 function Welcome({ setOpenModal }) {
