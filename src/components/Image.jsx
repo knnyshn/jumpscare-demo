@@ -1,11 +1,13 @@
 import React from "react"
 
-const Image = ({ id }) => {
-  const handleClick = (e) => {
+const Image = ({ id, onClick }) => {
+
+  const handleImageClick = (e) => {
+    console.clear()
     const rect = e.target.getBoundingClientRect();
     const x = Math.round(e.clientX - rect.left);
     const y = Math.round(e.clientY - rect.top);
-    console.log(`x: ${x}, y: ${y}`);
+    onClick(x, y);
   }
 
   return (
@@ -14,7 +16,7 @@ const Image = ({ id }) => {
         className="no-drag"
         src={`./assets/${id}.jpeg`}
         alt="dammit"
-        onClick={handleClick}
+        onClick={handleImageClick}
       />
     </>
   )
