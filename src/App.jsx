@@ -5,7 +5,7 @@ import useLocalStorage from "./components/useLocalStorage";
 
 const App = () => {
   const time = useTime();
-  const [boxes, setBoxes] = useLocalStorage("boxes", [(420, 420)]);
+  const [boxes, setBoxes] = useLocalStorage("boxes", []);
 
   const handleClick = (x, y) => {
     setBoxes([...boxes, [x, y]]);
