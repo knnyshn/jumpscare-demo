@@ -3,7 +3,6 @@ import React from "react"
 const Image = ({ id, onClick }) => {
 
   const handleImageClick = (e) => {
-    console.clear()
     const rect = e.target.getBoundingClientRect();
     const x = Math.round(e.clientX - rect.left);
     const y = Math.round(e.clientY - rect.top);
