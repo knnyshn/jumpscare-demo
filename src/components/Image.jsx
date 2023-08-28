@@ -11,12 +11,14 @@ const Image = ({ id, onClick }) => {
 
   return (
     <>
+      <div class="flex justify-center">
       <img
         className="no-drag"
         src={`./assets/${id}.jpeg`}
         alt="dammit"
         onClick={handleImageClick}
-      />
+        />
+      </div>
     </>
   )
 }
