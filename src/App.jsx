@@ -1,24 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Image from "./components/Image";
 import useTime from "./components/useTime";
+import useLocalStorage from "./components/useLocalStorage";
 
 const App = () => {
   const time = useTime();
-  const [boxes, setBoxes] = useState([420, 420])
-  
-  
-  // Load data
-  useEffect(() => {
-    const data = localStorage.getItem("boxes");
-    console.log("data", data);
-    // TODO 1
-    setBoxes(JSON.parse(data))
-  },[])
-  
-  // Save data
-  useEffect(() => {
-    localStorage.setItem("boxes", JSON.stringify(boxes));
-  },[boxes])
+  const [boxes, setBoxes] = useLocalStorage("boxes", [(420, 420)]);
 
   const handleClick = (x, y) => {
     setBoxes([...boxes, [x, y]]);
